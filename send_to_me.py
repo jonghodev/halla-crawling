@@ -2,8 +2,6 @@ import requests
 from config import get_kakao_api_key
 import json
 
-kakao_api_key = "JSt2VMLy1Y3AS_hSj5KZyIUJsOPgysHys18KPXLqAAABjFzloxhAPV-WDrAHcw"
-
 def send_kakao_message_to_me(text):
     api_url = "https://kapi.kakao.com/v2/api/talk/memo/default/send"
     kakao_api_key = get_kakao_api_key()
