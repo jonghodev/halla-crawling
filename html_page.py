@@ -3,7 +3,12 @@ from selenium import webdriver
 from selenium.webdriver.common.by import By
 from selenium.webdriver.support.select import Select
 
-driver = webdriver.Chrome()
+chrome_options = webdriver.ChromeOptions()
+chrome_options.add_argument('--headless')
+chrome_options.add_argument('--no-sandbox')
+chrome_options.add_argument('--disable-dev-shm-usage')
+driver = webdriver.Chrome(chrome_options)
+
 url = "https://visithalla.jeju.go.kr/reservation/status.do?language=ko_KR"
 
 def fetch_html(is_next_page, is_next_dropbox):
