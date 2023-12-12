@@ -1,9 +1,11 @@
 import time
 import schedule
+from bs4 import BeautifulSoup
+
 from send_to_me import send_kakao_message_to_me
 from send_to_friend import send_kakao_message_to_friend
+from refresh_token import refresh
 from html_page import fetch_html
-from bs4 import BeautifulSoup
 
 def job(target, is_next_page, is_next_dropbox):
   html = fetch_html(is_next_page, is_next_dropbox)
@@ -29,6 +31,8 @@ schedule.every(5).seconds.do(lambda: job('#TD_20231231', False, False)) # 12.31 
 schedule.every(5).seconds.do(lambda: job('#TD_20231231', False, True)) # 12.31 관음사
 schedule.every(5).seconds.do(lambda: job('#TD_20240101', True, False)) # 1.1 성판악
 schedule.every(5).seconds.do(lambda: job('#TD_20240101', True, True)) # 1.1 관음사
+
+schedule.every(60).minutes.do(refresh) # Token Refresh
 
 while True:
     schedule.run_pending()
