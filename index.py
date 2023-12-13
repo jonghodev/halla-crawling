@@ -1,5 +1,6 @@
 import time
 import sys
+import datetime
 import schedule
 from bs4 import BeautifulSoup
 
@@ -10,6 +11,8 @@ from html_page import fetch_html
 
 def job(target, is_next_page, is_next_dropbox):
   try:
+    print(f'job 실행: {datetime.datetime.now()}')
+
     html = fetch_html(is_next_page, is_next_dropbox)
     soup = BeautifulSoup(html, 'html.parser')
 
