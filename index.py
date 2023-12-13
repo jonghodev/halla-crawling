@@ -8,8 +8,6 @@ from send_to_friend import send_kakao_message_to_friend
 from refresh_token import refresh
 from html_page import fetch_html
 
-sys.stdout.flush()
-
 def job(target, is_next_page, is_next_dropbox):
   try:
     html = fetch_html(is_next_page, is_next_dropbox)
@@ -30,8 +28,10 @@ def job(target, is_next_page, is_next_dropbox):
         print(text)
       else:
         print(f'{path_text} {reservation_date_text} 일자에 찾지 못했습니다.')
+      sys.stdout.flush()
   except Exception as e:
     print(f'에러 발생: {e}')
+    sys.stdout.flush()
   
 schedule.every(10).seconds.do(lambda: job('#TD_20231231', False, False)) # 12.31 성판악
 schedule.every(10).seconds.do(lambda: job('#TD_20231231', False, True)) # 12.31 관음사
