@@ -23,7 +23,7 @@ def send_kakao_message_to_friend(text):
 
     data = {
         "template_object": json.dumps(template_object),
-        "receiver_uuids": json.dumps(["d0V9Sn1FdUx1WWteblptVGRTZ0t6SnpDc0t5DA"])
+        "receiver_uuids": json.dumps(["d0V9Sn1FdUx1WWteblptVGRTZ0t6SnpDc0t5DA", "d0J6TH9HdkZyXm9ca1lsWGtabEBxQXFIeEByGw"])
     }
 
     # 카카오톡 메시지 전송

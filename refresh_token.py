@@ -25,7 +25,6 @@ def refresh():
         print(f"리프레시 성공 응답 내용: {response.text}")
         new_access_token = json.loads(response.text)['access_token']
         update_json(new_access_token)
-
     else:
         print(f"리프레시 실패. 응답 코드: {response.status_code}, 응답 내용: {response.text}")
 
