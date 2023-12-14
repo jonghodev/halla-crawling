@@ -40,8 +40,8 @@ def job(target, is_next_page, is_next_dropbox):
     print(f'에러 발생: {e}')
     sys.stdout.flush()
   
-schedule.every(10).seconds.do(lambda: job('#TD_20231231', False, False)) # 12.31 성판악
-schedule.every(10).seconds.do(lambda: job('#TD_20231231', False, True)) # 12.31 관음사
+# schedule.every(10).seconds.do(lambda: job('#TD_20231231', False, False)) # 12.31 성판악
+# schedule.every(10).seconds.do(lambda: job('#TD_20231231', False, True)) # 12.31 관음사
 schedule.every(10).seconds.do(lambda: job('#TD_20240101', True, False)) # 1.1 성판악
 schedule.every(10).seconds.do(lambda: job('#TD_20240101', True, True)) # 1.1 관음사
 
