@@ -21,7 +21,7 @@ def job(target, is_next_page, is_next_dropbox):
       arr = date.text.strip().split()
       reservation_date = int(arr[0])
       reservation_date_text = f'12월 {reservation_date}일' if reservation_date > 10 else f'1월 {reservation_date}일'
-      path_text = '성판악' if is_next_dropbox else '관음사'
+      path_text = '관음사' if is_next_dropbox else '성판악'
       remain_count = int(arr[2])
 
       if remain_count > 0:
