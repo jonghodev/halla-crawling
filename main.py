@@ -49,4 +49,5 @@ schedule.every(60).minutes.do(refresh) # Token Refresh
 
 while True:
     schedule.run_pending()
+    print('time sleep')
     time.sleep(1)
