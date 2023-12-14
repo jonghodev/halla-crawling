@@ -14,6 +14,10 @@ def job(target, is_next_page, is_next_dropbox):
     print(f'job 실행: {datetime.datetime.now()}')
 
     html = fetch_html(is_next_page, is_next_dropbox)
+    if html == 'error':
+      print('Error 발생 break 합니다.')
+      sys.stdout.flush()
+      return
     soup = BeautifulSoup(html, 'html.parser')
 
     available_dates = soup.select(target)
