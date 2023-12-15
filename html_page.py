@@ -27,6 +27,7 @@ def fetch_html(is_next_page, is_next_dropbox):
     if is_next_page:
       driver.find_element(By.XPATH,'//*[@id="sub_contents"]/div/div/div/div[1]/a[2]').click()
   except Exception as ex:
+    print(ex)
     return 'error'
   
   return driver.page_source
